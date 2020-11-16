@@ -1,0 +1,16 @@
+字体黑-灰
+#181818
+#7B7B7B
+#ACACAC
+#D2D2D2
+
+红
+#E83B47
+
+边框
+#DDDDDD
+
+背景
+#f5f5f5
+#F7F7F7
+#FDFDFD

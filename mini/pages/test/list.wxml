@@ -1,0 +1,10 @@
+<view class="list">
+  <view class="good" wx:for="{{list}}" wx:key="index">
+    <view class="good-img">
+      <image src="{{item.marketingMainPic || item.mainPic}}" lazy-load="true" mode="widthFix"></image>
+    </view>
+    <view class="good-info">
+      <view class="good-title">{{item.title}}</view>
+    </view>
+  </view>
+</view>
