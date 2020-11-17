@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "goods-list": "../../components/GoodsList/index"
+  },
   "enablePullDownRefresh": true
 }

@@ -8,7 +8,8 @@ Page({
     list: [],
     page: 1,
     loading: false,
-    loaded: false
+    loaded: false,
+    arr: [0, 0]
   },
 
   resetData: function () {
