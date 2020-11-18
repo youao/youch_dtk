@@ -12,6 +12,7 @@
   opacity: 0;
   z-index: -1;
   transition: top 1s, opacity 1s, zIndex 1s;
+  box-shadow: 1rpx 1rpx 4rpx rgba(0,0,0,0.1);
 }
 .goods.show {
   opacity: 1;
@@ -28,8 +29,9 @@
 }
 
 .goods-tip {
+  display: inline-block;
   font-size: 20rpx;
-  line-height: 50rpx;
+  line-height: 32rpx;
   color: #acacac;
   background-color: #f5f5f5;
   border-radius: 8rpx;
@@ -38,11 +40,47 @@
   margin-right: 10rpx;
 }
 
+.goods-quan-box {
+  position: relative;
+  overflow: hidden;
+  margin-right: 10rpx;
+}
+.goods-quan {
+  font-size: 20rpx;
+  line-height: 1.5;
+  color: #e83b47;
+  background-color: #fef5f7;
+  border-radius: 6rpx;
+  border: 1rpx solid #e83b47;
+  box-sizing: border-box;
+  padding: 0 16rpx;
+}
+
+.goods-quan-dot {
+  display: inline-block;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  border: 1rpx solid #e83b47;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -4rpx;
+  background: #fff;
+}
+.goods-quan-dot.right {
+  right: -4rpx;
+  left: auto;
+}
+
 .goods-row {
   font-size: 24rpx;
 }
 .goods-row.price {
   color: #e83b47;
+  display: flex;
+  align-items: center;
 }
 .goods-priceval {
   font-size: 36rpx;

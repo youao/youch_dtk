@@ -11,7 +11,18 @@
       </view>
       <view class="goods-row price">
         券后￥<text class="goods-priceval">{{item.actualPrice}}</text>
-        <text class="goods-tip" wx:if="item.couponPrice">{{item.couponPrice}}元券</text>
+        <view class="goods-quan-box" wx:if="item.couponPrice">
+          <text class="goods-quan-dot"></text>
+          <view class="goods-quan">
+            <text>{{item.couponPrice}}元券</text>
+          </view>
+          <text class="goods-quan-dot right"></text>
+        </view>
+          <!-- <view class="goods-quan" wx:if="item.couponPrice">
+            <text class="goods-quan-dot"></text>
+            <text>{{item.couponPrice}}元券</text>
+            <text class="goods-quan-dot right"></text>
+          </view> -->
       </view>
       <view>
         <text class="goods-tip" wx:if="item.freeshipRemoteDistrict">包邮</text>
