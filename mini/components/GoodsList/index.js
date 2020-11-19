@@ -1,5 +1,9 @@
 Component({
 
+  options: {
+    addGlobalClass: true // 使用全局样式 app.wxss
+  },
+
   properties: {
     useWaterFalls: {
       type: Boolean,

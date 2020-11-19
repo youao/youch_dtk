@@ -1,11 +1,14 @@
 <view class="list" style="height:{{waterFallsHeight}}rpx;">
   <view class="goods {{positionList[index].top ? 'show' : ''}}" wx:for="{{propList}}" wx:key="index"
     style="width:{{columnWidth}}rpx;top:{{positionList[index].top}}rpx;left:{{positionList[index].left}}rpx">
-    <view class="goods-img" style="width:{{columnWidth}}rpx;height:{{columnWidth}}rpx">
+    <view class="goods-img" style="height:{{columnWidth}}rpx">
       <image src="{{item.marketingMainPic || item.mainPic}}" lazy-load="true" mode="widthFix"></image>
     </view>
     <view class="goods-info">
-      <view class="goods-title">{{item.title}}</view>
+      <view class="goods-title ellipsis-2">
+        <text class="iconfont iconcircle-minus"></text>
+        {{item.title}}
+      </view>
       <view wx:if="item.specialText.length">
         <text class="goods-tip" wx:for="{{item.specialText}}" wx:for-index="i" wx:for-item="it" wx:key="i">{{it}}</text>
       </view>
@@ -18,15 +21,9 @@
           </view>
           <text class="goods-quan-dot right"></text>
         </view>
-          <!-- <view class="goods-quan" wx:if="item.couponPrice">
-            <text class="goods-quan-dot"></text>
-            <text>{{item.couponPrice}}元券</text>
-            <text class="goods-quan-dot right"></text>
-          </view> -->
       </view>
       <view>
-        <text class="goods-tip" wx:if="item.freeshipRemoteDistrict">包邮</text>
-        <text class="goods-tip" wx:if="item.goldSellers">金牌卖家</text>
+        <text class="goods-tip" wx:if="{{item.freeshipRemoteDistrict}}">包邮</text>
       </view>
     </view>
   </view>

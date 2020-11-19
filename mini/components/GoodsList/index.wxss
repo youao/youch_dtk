@@ -12,8 +12,9 @@
   opacity: 0;
   z-index: -1;
   transition: top 1s, opacity 1s, zIndex 1s;
-  box-shadow: 1rpx 1rpx 4rpx rgba(0,0,0,0.1);
+  box-shadow: 1rpx 1rpx 4rpx rgba(0, 0, 0, 0.1);
 }
+
 .goods.show {
   opacity: 1;
   z-index: 1;
@@ -45,6 +46,7 @@
   overflow: hidden;
   margin-right: 10rpx;
 }
+
 .goods-quan {
   font-size: 20rpx;
   line-height: 1.5;
@@ -69,6 +71,7 @@
   left: -4rpx;
   background: #fff;
 }
+
 .goods-quan-dot.right {
   right: -4rpx;
   left: auto;
@@ -77,11 +80,13 @@
 .goods-row {
   font-size: 24rpx;
 }
+
 .goods-row.price {
   color: #e83b47;
   display: flex;
   align-items: center;
 }
+
 .goods-priceval {
   font-size: 36rpx;
   margin-right: 10rpx;
