@@ -121,7 +121,7 @@ Component({
         }
       }
       return index;
-    }
+    },
 
   }
 })

@@ -1,3 +1,0 @@
-<view>
-  <goods-list prop-list="{{list}}" water-falls-name="goods"></goods-list>
-</view>

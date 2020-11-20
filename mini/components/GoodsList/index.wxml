@@ -3,14 +3,15 @@
     style="width:{{columnWidth}}rpx;top:{{positionList[index].top}}rpx;left:{{positionList[index].left}}rpx">
     <view class="goods-img" style="height:{{columnWidth}}rpx">
       <image src="{{item.marketingMainPic || item.mainPic}}" lazy-load="true" mode="widthFix"></image>
+      <text wx:if="{{item.video}}" class="iconfont icon-icon_play v-play"></text>
     </view>
     <view class="goods-info">
-      <view class="goods-title ellipsis-2">
-        <text class="iconfont iconcircle-minus"></text>
+      <view class="goods-title ellipsis">
+        <text wx:if="{{item.shopType==1}}" class="iconfont icon-tianmaot tmall"></text>
         {{item.title}}
       </view>
-      <view wx:if="item.specialText.length">
-        <text class="goods-tip" wx:for="{{item.specialText}}" wx:for-index="i" wx:for-item="it" wx:key="i">{{it}}</text>
+      <view wx:if="{{item.brandName}}" class="goods-row">
+        品牌：{{item.brandName}}
       </view>
       <view class="goods-row price">
         券后￥<text class="goods-priceval">{{item.actualPrice}}</text>
@@ -22,8 +23,11 @@
           <text class="goods-quan-dot right"></text>
         </view>
       </view>
-      <view>
-        <text class="goods-tip" wx:if="{{item.freeshipRemoteDistrict}}">包邮</text>
+      <view class="goods-row">
+        <text wx:if="{{item.activityType == 2}}" class="iconfont icon-taoqianggou1 tqg"></text>
+        <text wx:elif="{{item.activityType == 3}}" class="iconfont icon-juhuasuan1 jhs"></text>
+        <text class="goods-tip" wx:if="{{item.freeshipRemoteDistrict}}">偏远包邮</text>
+        <text class="font-gray-tint">{{item.sales}}人已付款</text>
       </view>
     </view>
   </view>

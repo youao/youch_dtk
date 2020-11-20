@@ -1,4 +1,4 @@
-const formatTime = date => {
+export function formatTime(date) {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -9,11 +9,11 @@ const formatTime = date => {
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
-const formatNumber = n => {
+export function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
 
-module.exports = {
-  formatTime: formatTime
+export function getWanNum(n) {
+  return n < 1000 ? n : Math.ceil(n / 1000) / 10 + '万';
 }
