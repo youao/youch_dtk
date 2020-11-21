@@ -123,5 +123,12 @@ Component({
       return index;
     },
 
+    toDetail: function (e) {
+      let id = e.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: '/pages/goods/detail?id='+id,
+      })
+    }
+
   }
 })

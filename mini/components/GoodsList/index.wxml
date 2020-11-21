@@ -1,6 +1,8 @@
 <view class="list" style="height:{{waterFallsHeight}}rpx;">
   <view class="goods {{positionList[index].top ? 'show' : ''}}" wx:for="{{propList}}" wx:key="index"
-    style="width:{{columnWidth}}rpx;top:{{positionList[index].top}}rpx;left:{{positionList[index].left}}rpx">
+    style="width:{{columnWidth}}rpx;top:{{positionList[index].top}}rpx;left:{{positionList[index].left}}rpx"
+    data-id="{{item.id}}"
+    bindtap="toDetail">
     <view class="goods-img" style="height:{{columnWidth}}rpx">
       <image src="{{item.marketingMainPic || item.mainPic}}" lazy-load="true" mode="widthFix"></image>
       <text wx:if="{{item.video}}" class="iconfont icon-icon_play v-play"></text>
@@ -8,12 +10,12 @@
     <view class="goods-info">
       <view class="goods-title ellipsis">
         <text wx:if="{{item.shopType==1}}" class="iconfont icon-tianmaot tmall"></text>
-        {{item.title}}
+        {{item.dtitle}}
       </view>
       <view wx:if="{{item.brandName}}" class="goods-row">
         品牌：{{item.brandName}}
       </view>
-      <view class="goods-row price">
+      <view class="goods-row font-red fmix-align">
         券后￥<text class="goods-priceval">{{item.actualPrice}}</text>
         <view class="goods-quan-box" wx:if="item.couponPrice">
           <text class="goods-quan-dot"></text>

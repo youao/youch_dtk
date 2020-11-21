@@ -1,0 +1,24 @@
+.row {
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 1rpx 1rpx 4rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+  padding: 20rpx 30rpx;
+}
+.row.top {
+  border-radius: 0 0 20rpx 20rpx;
+}
+.cell {
+  padding: 10rpx;
+  font-size: 24rpx;
+}
+.strong {
+  font-size: 40rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  margin-right: 8rpx;
+}
+.title {
+  font-size: 30rpx;
+  font-weight: bold;
+}

@@ -1,0 +1,18 @@
+<view>
+  <swiper indicator-dots="true" autoplay="true" style="height:750rpx">
+    <swiper-item wx:for="{{goods.imgs}}" wx:key="*this">
+      <image src="{{item}}" style="height:750rpx"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="row top">
+  <view class="cell">
+    <text class="font-red">￥<text class="strong">{{goods.actualPrice}}</text></text>
+    <text>券后</text>
+    <text class="font-gray-tint" style="margin-left: 20rpx">原价￥{{goods.originalPrice}}</text>
+  </view>
+  <view class="cell title">{{goods.title}}</view>
+  <view class="cell font-gray-tint">{{goods.desc}}</view>
+
+</view>

@@ -75,17 +75,18 @@
   color: #e83b47;
   background-color: #fef5f7;
   border-radius: 6rpx;
-  border: 1rpx solid #e83b47;
+  border: 1rpx solid;
   box-sizing: border-box;
   padding: 0 16rpx;
 }
 
 .goods-quan-dot {
+  color: inherit;
   display: inline-block;
   width: 10rpx;
   height: 10rpx;
   border-radius: 50%;
-  border: 1rpx solid #e83b47;
+  border: 1rpx solid;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -104,23 +105,7 @@
   padding-bottom: 12rpx;
 }
 
-.goods-row.price {
-  color: #e83b47;
-  display: flex;
-  align-items: center;
-}
-
 .goods-priceval {
   font-size: 36rpx;
   margin-right: 10rpx;
-}
-
-.iconfont.tmall {
-  color: #ff0036;
-}
-.iconfont.jhs {
-  color: #e61414;
-}
-.iconfont.tqg {
-  color: #ff852a;
 }

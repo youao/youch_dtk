@@ -7,3 +7,10 @@ export function getGoodsList(data = {}) {
     cache: data.cache || false
   });
 }
+
+/**
+ * 获取商品详情
+ */
+export function getGoodsDetail(id) {
+  return request.get("/goods/detail", {id});
+}

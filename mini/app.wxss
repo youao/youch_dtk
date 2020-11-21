@@ -33,8 +33,40 @@ image {
   -webkit-box-orient: vertical;
 }
 
+.fmix-align {
+  display: flex;
+  align-items: center;
+}
+
+.fmix-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fmix-align-sa {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.fmix-align-sa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fmix-v {
+  display: flex;
+  flex-direction: column;
+}
+
 .font-general {
   color: #181818;
+}
+
+.font-red {
+  color: #e83b47;
 }
 
 .font-gray {
@@ -47,4 +79,16 @@ image {
 
 .font-gray-light {
   color: #d2d2d2;
+}
+
+.iconfont.tmall {
+  color: #ff0036;
+}
+
+.iconfont.jhs {
+  color: #e61414;
+}
+
+.iconfont.tqg {
+  color: #ff852a;
 }
