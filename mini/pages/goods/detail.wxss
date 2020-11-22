@@ -22,3 +22,49 @@
   font-size: 30rpx;
   font-weight: bold;
 }
+
+.coupon {
+  background-color: #FDE9EA;
+  margin: 30rpx 0 20rpx;
+  padding: 24rpx 0;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.coupon-info {
+  flex: 1;
+  line-height: 1.6;
+}
+.coupon-val {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 0 30rpx;
+}
+.coupon-val .val {
+  font-size: 50rpx;
+}
+.coupon-btn {
+  position: relative;
+  padding: 0 40rpx;
+}
+
+.coupon-btn::after {
+  content: '';
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 1rpx solid #F5D1D8;
+  box-sizing: -2rpx 0 6rpx rgba(245,209,216, 0.3);
+}
+
+.cell-key {
+  display: inline-block;
+  min-width: 100rpx;
+  font-weight: bold; 
+  margin-right: 10rpx;
+}

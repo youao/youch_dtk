@@ -12,7 +12,27 @@
     <text>券后</text>
     <text class="font-gray-tint" style="margin-left: 20rpx">原价￥{{goods.originalPrice}}</text>
   </view>
+
+  <view class="coupon font-red fmix-align">
+    <view class="coupon-val">￥<text class="val">{{goods.couponPrice}}</text></view>
+    <view class="coupon-info">
+      <view>优惠券使用期限</view>
+      <view class="font-mini">截止{{goods.couponEndTime}}</view>
+    </view>
+    <div class="coupon-btn">立即领券</div>
+  </view>
+
   <view class="cell title">{{goods.title}}</view>
   <view class="cell font-gray-tint">{{goods.desc}}</view>
 
+  <view class="cell">
+    <text class="cell-key">销量</text>
+    <text>月销{{goods.monthSales}}件</text>
+  </view>
+</view>
+
+<view class="row">
+  <block wx:for="{{goods.detailPics}}" wx:key="index">
+    <image src="http:{{item.img}}" mode="widthFix"></image>
+  </block>
 </view>

@@ -61,6 +61,19 @@ image {
   flex-direction: column;
 }
 
+.font-large {
+  font-size: 40rpx;
+}
+.font-big {
+  font-size: 32rpx;
+}
+.font-small {
+  font-size: 24rpx;
+}
+.font-mini {
+  font-size: 20rpx;
+}
+
 .font-general {
   color: #181818;
 }
