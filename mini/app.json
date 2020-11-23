@@ -4,9 +4,9 @@
     "pages/goods/detail"
   ],
   "window": {
-    "backgroundColor": "#fdfdfd",
+    "backgroundColor": "#f7f7f7",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fdfdfd",
+    "navigationBarBackgroundColor": "#f7f7f7",
     "navigationBarTitleText": "花粉",
     "navigationBarTextStyle": "black"
   },

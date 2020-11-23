@@ -8,7 +8,7 @@
       <text wx:if="{{item.video}}" class="iconfont icon-icon_play v-play"></text>
     </view>
     <view class="goods-info">
-      <view class="goods-title ellipsis">
+      <view class="goods-title ellipsis-2">
         <text wx:if="{{item.shopType==1}}" class="iconfont icon-tianmaot tmall"></text>
         {{item.dtitle}}
       </view>

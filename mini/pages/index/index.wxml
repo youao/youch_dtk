@@ -1,3 +1,10 @@
 <view>
-  <goods-list prop-list="{{list}}" water-falls-name="goods"></goods-list>
+  <view>
+    <text class="nav-btn {{rankType == navs[index].type ? 'on' : ''}}" wx:for="{{navs}}" wx:key="index" data-index="{{index}}" bindtap="switchNav">{{item.title}}</text>
+  </view>
+  <view hidden="{{!showCategory}}">
+    <text class="category {{cid == category[index].cid ? 'on' : ''}}" wx:for="{{category}}"
+      wx:key="index" data-cid="{{item.cid}}" bindtap="switchCategory">{{item.cname}}</text>
+  </view>
+  <goods-list prop-list="{{list}}"></goods-list>
 </view>

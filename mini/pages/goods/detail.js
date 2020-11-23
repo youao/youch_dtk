@@ -1,5 +1,6 @@
 import {
-  getGoodsDetail
+  getGoodsDetail,
+  getCouponClickUrl
 } from '../../api/goods';
 
 Page({
@@ -10,6 +11,10 @@ Page({
       title: '',
       desc: '',
       imgs: [],
+      goodsId: '',
+    },
+    coupon: {
+      tpwd: ''
     }
   },
 
@@ -17,21 +22,42 @@ Page({
     this.setData({
       id: options.id
     })
-    getGoodsDetail(options.id).then(res => {
+    this.getDetail(options.id)
+  },
+
+  getDetail(id) {
+    getGoodsDetail(id).then(res => {
       console.log(res);
       let data = res.data;
       data.imgs = data.imgs ? data.imgs.split(',') : [data.mainPic];
-      // detailPics
-      data.detailPics = JSON.parse(data.detailPics);
-      console.log(data)
+      data.detailPics && (data.detailPics = JSON.parse(data.detailPics));
       this.setData({
         goods: data
       })
     })
   },
 
-  onReady: function () {
+  getCoupon() {
+    let gid = this.data.goods.goodsId;
+    let tpwd = this.data.coupon.tpwd;
+    if (tpwd) {
+      return this.copyKongling(tpwd)
+    }
+    getCouponClickUrl(gid).then(res => {
+      this.setData({
+        coupon: res.data
+      })
+      this.copyKongling(res.data.tpwd)
+    })
+  },
 
+  copyKongling(kl) {
+    wx.setClipboardData({
+      data: kl,
+      success(res) {
+        console.log(res)
+      }
+    })
   },
 
   onPullDownRefresh: function () {

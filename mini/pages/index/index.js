@@ -1,5 +1,8 @@
+const app = getApp()
+
 import {
-  getGoodsList
+  getRankList,
+  getCategory,
 } from '../../api/goods.js';
 
 import {
@@ -9,14 +12,62 @@ import {
 Page({
 
   data: {
+    navs: [{
+      type: 1,
+      title: '实时榜',
+      showCategory: 1
+    }, {
+      type: 2,
+      title: '全天榜',
+      showCategory: 1
+    }, {
+      type: 3,
+      title: '热推榜',
+      showCategory: 0
+    }, {
+      type: 4,
+      title: '复购榜',
+      showCategory: 0
+    }, {
+      type: 7,
+      title: '热搜榜',
+      showCategory: 0
+    }],
+    showCategory: 1,
+    category: [],
+    cid: '',
     list: [],
+    rankType: 1,
     page: 1,
     loading: false,
     loaded: false,
-    arr: [0, 0]
   },
 
-  resetData: function () {
+  switchNav(e) {
+    let datas = e.currentTarget.dataset;
+    let {
+      type,
+      showCategory
+    } = this.data.navs[datas.index];
+    this.setData({
+      rankType: type,
+      showCategory
+    })
+    this.getData(1)
+  },
+
+  switchCategory(e) {
+    let datas = e.currentTarget.dataset;
+    const {
+      cid
+    } = datas;
+    this.setData({
+      cid
+    })
+    this.getData(1)
+  },
+
+  resetData() {
     this.setData({
       list: [],
       page: 1,
@@ -26,7 +77,14 @@ Page({
   },
 
   getData: function (reload = 0) {
-    if (this.data.loading || this.data.loaded) return;
+    let {
+      loading,
+      loaded,
+      page,
+      cid,
+      rankType
+    } = this.data;
+    if (loading || loaded) return;
     if (reload == 1) {
       this.resetData();
     }
@@ -34,34 +92,60 @@ Page({
       loading: true
     });
     wx.nextTick(() => {
-      let page = this.data.page;
-      getGoodsList({
-        page
+      getRankList({
+        page,
+        cid,
+        rankType
       }).then(res => {
         let data = res.data || [];
-        data = data.map((item) => {
-          item.sales = getWanNum(item.monthSales);
-          return item;
-        });
-        let list = this.data.list;
-        list.push.apply(list, data);
-        this.setData({
-          list,
-          loading: false,
-          loaded: data.length === 0,
-          page: page + 1
-        });
+        this.setListData(data)
       }).catch((err) => {
         this.setData({
           loading: false,
           loaded: true
-        });
+        })
       })
     })
   },
 
+  setListData(data) {
+    data = data.map((item) => {
+      item.sales = getWanNum(item.monthSales);
+      return item;
+    });
+    let {
+      list,
+      page
+    } = this.data;
+    list.push.apply(list, data);
+    this.setData({
+      list: list,
+      loading: false,
+      loaded: data.length === 0,
+      page: page + 1
+    });
+  },
+
+  initList(category) {
+    this.setData({
+      category,
+      cid: category[0].cid
+    });
+    wx.nextTick(() => {
+      this.getData();
+    })
+  },
+
   onLoad: function (options) {
-    this.getData();
+    let category = app.globalData.category;
+    if (!category) {
+      getCategory().then(res => {
+        app.globalData.category = res.data;
+        this.initList(res.data)
+      })
+    } else {
+      this.initList(category)
+    }
   },
 
   onPullDownRefresh: function () {

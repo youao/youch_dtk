@@ -1,7 +1,7 @@
 <view>
   <swiper indicator-dots="true" autoplay="true" style="height:750rpx">
     <swiper-item wx:for="{{goods.imgs}}" wx:key="*this">
-      <image src="{{item}}" style="height:750rpx"></image>
+      <image src="{{item}}" style="height:750rpx" lazy-load="true"></image>
     </swiper-item>
   </swiper>
 </view>
@@ -13,7 +13,7 @@
     <text class="font-gray-tint" style="margin-left: 20rpx">原价￥{{goods.originalPrice}}</text>
   </view>
 
-  <view class="coupon font-red fmix-align">
+  <view class="coupon font-red fmix-align" bindtap="getCoupon">
     <view class="coupon-val">￥<text class="val">{{goods.couponPrice}}</text></view>
     <view class="coupon-info">
       <view>优惠券使用期限</view>
@@ -25,14 +25,40 @@
   <view class="cell title">{{goods.title}}</view>
   <view class="cell font-gray-tint">{{goods.desc}}</view>
 
+  <view wx:if="{{goods.brandId}}" class="cell">
+    <text class="cell-key">品牌</text>
+    <text>{{goods.brandName}}</text>
+  </view>
   <view class="cell">
     <text class="cell-key">销量</text>
     <text>月销{{goods.monthSales}}件</text>
   </view>
 </view>
 
-<view class="row">
+<view wx:if="{{goods.shopName}}" class="row shop fmix-align">
+  <view class="shop-img fmix-center">
+    <image src="{{goods.shopLogo}}" mode="heightFix" lazy-load="true"></image>
+  </view>
+  <view class="shop-info flex-con">
+    <view class="shop-name">{{goods.shopName}}</view>
+    <view class="fmix-align-sb font-gray">
+      <view>描述相符{{goods.dsrScore}}</view>
+      <view>物流服务{{goods.shipScore}}</view>
+      <view>服务态度{{goods.serviceScore}}</view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{goods.detailPics}}" class="row">
+  <view class="cell des-title">
+    <text class="cell-key">宝贝详情</text>
+  </view>
   <block wx:for="{{goods.detailPics}}" wx:key="index">
-    <image src="http:{{item.img}}" mode="widthFix"></image>
+    <image src="http:{{item.img}}" mode="widthFix" lazy-load="true"></image>
   </block>
+</view>
+
+<view class="row fixed-foot fmix-center {{coupon.tpwd?'success':''}}" bindtap="getCoupon">
+  <text wx:if="{{!coupon.tpwd}}">立即领券购买</text>
+  <text wx:else>口令已复制，前往淘宝领券</text>
 </view>

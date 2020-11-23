@@ -1,7 +1,7 @@
 @import '/assets/css/iconfont.wxss';
 
 page {
-  background-color: #fdfdfd;
+  background-color: #f7f7f7;
   font-size: 28rpx;
   color: #181818;
   font-family: Arial, Helvetica, sans-serif;
@@ -50,7 +50,7 @@ image {
   justify-content: space-around;
 }
 
-.fmix-align-sa {
+.fmix-align-sb {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,6 +59,15 @@ image {
 .fmix-v {
   display: flex;
   flex-direction: column;
+}
+.flex-con {
+  flex: 1;
+}
+.flex-con-2 {
+  flex: 2;
+}
+.flex-con-3 {
+  flex: 3;
 }
 
 .font-large {

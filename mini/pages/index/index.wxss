@@ -1,0 +1,34 @@
+.nav-btn {
+	display: inline-block;
+	padding: 16rpx 20rpx 24rpx;
+	font-size: 32rpx;
+	line-height: 50rpx;
+	color: #999;
+}
+
+.nav-btn.on {
+	color: #212121;
+	position: relative;
+}
+
+.nav-btn.on::after {
+	content: '';
+	height: 4rpx;
+	position: absolute;
+	right: 12rpx;
+	bottom: 15rpx;
+	left: 12rpx;
+	background: -webkit-linear-gradient(left, #e83b47, #E8666F 10%, #FDD9DB);
+}
+
+.category {
+	display: inline-block;
+	padding: 10rpx 20rpx;
+	line-height: 40rpx;
+	color: #999;
+}
+
+.category.on {
+	color: #212121;
+	font-weight: bold;
+}

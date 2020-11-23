@@ -23,11 +23,11 @@ Component({
     },
     containerSpace: {
       type: Number,
-      value: 30
+      value: 20
     },
     columnSpace: {
       type: Number,
-      value: 10
+      value: 12
     },
     propList: {
       type: Array,
@@ -80,7 +80,7 @@ Component({
       let waterFallsColumnsH = [];
       wx.createSelectorQuery().in(this).selectAll('.goods').boundingClientRect().exec((res) => {
         res[0].forEach((item, index) => {
-          let h = (item.height + columnSpace) * 2;
+          let h = (item.height) * 2 + columnSpace;
           list[index] = {};
           if (index < propColumn) {
             list[index].top = columnSpace;
@@ -88,7 +88,7 @@ Component({
             waterFallsColumnsH[index] = h;
           } else {
             var i = this.getArrayMinIndex(waterFallsColumnsH);
-            list[index].top = waterFallsColumnsH[i];
+            list[index].top = waterFallsColumnsH[i] + columnSpace;
             list[index].left = this.getWaterFallItemLeft(i);
             waterFallsColumnsH[i] += h;
           }
