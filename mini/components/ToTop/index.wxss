@@ -1,0 +1,21 @@
+.fix-aside-btn {
+  width: 60rpx;
+  height: 60rpx;
+  position: fixed;
+  right: 8rpx;
+  bottom: -100%;
+  z-index: 999;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: 20rpx;
+  font-weight: bold;
+  background-color: #fff;
+  box-shadow: -2rpx 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+}
+
+.fix-aside-btn.on {
+  bottom: 200rpx;
+  opacity: 1;
+}

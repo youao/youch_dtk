@@ -62,3 +62,5 @@
   <text wx:if="{{!coupon.tpwd}}">立即领券购买</text>
   <text wx:else>口令已复制，前往淘宝领券</text>
 </view>
+
+<to-top id="fixbtn" />

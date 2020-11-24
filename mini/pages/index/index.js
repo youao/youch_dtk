@@ -25,14 +25,6 @@ Page({
       type: 3,
       title: '热推榜',
       showCategory: 0
-    }, {
-      type: 4,
-      title: '复购榜',
-      showCategory: 0
-    }, {
-      type: 7,
-      title: '热搜榜',
-      showCategory: 0
     }],
     showCategory: 1,
     category: [],
@@ -87,10 +79,7 @@ Page({
   getData: function (reload = 0) {
     let {
       loading,
-      loaded,
-      page,
-      cid,
-      rankType
+      loaded
     } = this.data;
     if (loading || loaded) return;
     if (reload == 1) {
@@ -100,13 +89,20 @@ Page({
       loading: true
     });
     wx.nextTick(() => {
-      getRankList({
+      let {
         page,
         cid,
+        rankType,
+        showCategory
+      } = this.data;
+      getRankList({
+        page,
+        cid: showCategory?cid:'',
         rankType
       }).then(res => {
         let data = res.data || [];
         this.setListData(data)
+        wx.stopPullDownRefresh()
       }).catch((err) => {
         this.setData({
           loading: false,
@@ -145,7 +141,7 @@ Page({
       query.exec(res => {
         let w = 0;
         res[0].forEach(item => {
-          w += item.width * 2 + 30;
+          w += item.width * 750 / winW + 30;
         })
         this.setData({
           categoryUlW: w
@@ -176,5 +172,9 @@ Page({
   onReachBottom: function () {
     this.getData();
   },
+
+  onPageScroll(e){
+    this.selectComponent("#fixbtn").listenScroll(e)
+  }
 
 })

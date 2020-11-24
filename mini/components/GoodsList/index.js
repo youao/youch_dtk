@@ -1,3 +1,5 @@
+const winW = wx.getSystemInfoSync().windowWidth
+
 Component({
 
   options: {
@@ -27,7 +29,7 @@ Component({
     },
     columnSpace: {
       type: Number,
-      value: 12
+      value: 20
     },
     propList: {
       type: Array,
@@ -80,7 +82,7 @@ Component({
       let waterFallsColumnsH = [];
       wx.createSelectorQuery().in(this).selectAll('.goods').boundingClientRect().exec((res) => {
         res[0].forEach((item, index) => {
-          let h = (item.height) * 2 + columnSpace;
+          let h = (Math.ceil(item.height)) * (this.data.containerWidth/winW) + columnSpace;
           list[index] = {};
           if (index < propColumn) {
             list[index].top = columnSpace;
@@ -96,7 +98,7 @@ Component({
 
         this.setData({
           positionList: list,
-          waterFallsHeight: Math.max.apply(null, waterFallsColumnsH)
+          waterFallsHeight: Math.max.apply(null, waterFallsColumnsH)+columnSpace
         })
       });
     },

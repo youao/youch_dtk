@@ -68,6 +68,10 @@ Page({
 
   },
 
+  onPageScroll(e){
+    this.selectComponent("#fixbtn").listenScroll(e)
+  },
+
   onShareAppMessage: function () {
 
   }

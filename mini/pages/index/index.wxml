@@ -1,5 +1,5 @@
 <view>
-  <view>
+  <view class="fmix-align-sa">
     <text class="nav-btn {{rankType == navs[index].type ? 'on' : ''}}" wx:for="{{navs}}" wx:key="index"
       data-index="{{index}}" bindtap="switchNav">{{item.title}}</text>
   </view>
@@ -12,5 +12,6 @@
       </block>
     </view>
   </scroll-view>
-  <goods-list prop-list="{{list}}"></goods-list>
+  <goods-list prop-list="{{list}}" />
 </view>
+<to-top id="fixbtn" />

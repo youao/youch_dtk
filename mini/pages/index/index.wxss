@@ -39,6 +39,7 @@
 	padding: 10rpx 0;
 	line-height: 40rpx;
 	color: #999;
+	box-sizing: border-box;
 }
 
 .category.on {

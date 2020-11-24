@@ -1,0 +1,3 @@
+<view class="fix-aside-btn {{show?'on':''}} fmix-center" bindtap="toTop">
+  <text class="iconfont icon-chevron-up"></text>
+</view>

@@ -12,7 +12,7 @@
         <text wx:if="{{item.shopType==1}}" class="iconfont icon-tianmaot tmall"></text>
         {{item.dtitle}}
       </view>
-      <view wx:if="{{item.brandName}}" class="goods-row">
+      <view wx:if="{{item.brandId}}" class="goods-row">
         品牌：{{item.brandName}}
       </view>
       <view class="goods-row font-red fmix-align">

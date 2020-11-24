@@ -1,6 +1,5 @@
 const Base = {
-  // url: 'https://www.xiaoxishengqian.com/ych/api.php',
-  url: 'http://www.fandongxi.com/ych/api.php',
+  url: 'https://www.xiaoxishengqian.com/ych/api.php',
   header: {}
 };
 
