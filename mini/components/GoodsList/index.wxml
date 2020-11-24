@@ -29,7 +29,7 @@
         <text wx:if="{{item.activityType == 2}}" class="iconfont icon-taoqianggou1 tqg"></text>
         <text wx:elif="{{item.activityType == 3}}" class="iconfont icon-juhuasuan1 jhs"></text>
         <text class="goods-tip" wx:if="{{item.freeshipRemoteDistrict}}">偏远包邮</text>
-        <text class="font-gray-tint">{{item.sales}}人已付款</text>
+        <text class="font-gray-tint" style="display: inline-block">{{item.sales}}人已付款</text>
       </view>
     </view>
   </view>

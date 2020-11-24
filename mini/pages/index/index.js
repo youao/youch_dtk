@@ -1,4 +1,5 @@
 const app = getApp()
+const winW = wx.getSystemInfoSync().windowWidth
 
 import {
   getRankList,
@@ -35,6 +36,8 @@ Page({
     }],
     showCategory: 1,
     category: [],
+    categoryUlW: 2000,
+    categoryLeft: 0,
     cid: '',
     list: [],
     rankType: 1,
@@ -57,12 +60,17 @@ Page({
   },
 
   switchCategory(e) {
-    let datas = e.currentTarget.dataset;
+    const {
+      offsetLeft,
+      dataset
+    } = e.currentTarget
     const {
       cid
-    } = datas;
+    } = dataset;
+    let categoryLeft = offsetLeft - (winW / 2 - 30);
     this.setData({
-      cid
+      cid,
+      categoryLeft
     })
     this.getData(1)
   },
@@ -131,6 +139,19 @@ Page({
       category,
       cid: category[0].cid
     });
+    wx.nextTick(() => {
+      const query = wx.createSelectorQuery()
+      query.selectAll('.category').boundingClientRect()
+      query.exec(res => {
+        let w = 0;
+        res[0].forEach(item => {
+          w += item.width * 2 + 30;
+        })
+        this.setData({
+          categoryUlW: w
+        })
+      })
+    })
     wx.nextTick(() => {
       this.getData();
     })

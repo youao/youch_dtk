@@ -11,7 +11,7 @@
   background-color: #fff;
   opacity: 0;
   z-index: -1;
-  transition: top 1s, opacity 1s, zIndex 1s;
+  transition: top 0.5s, opacity 0.5s, zIndex 0.5s;
   box-shadow: 1rpx 1rpx 4rpx rgba(0, 0, 0, 0.1);
 }
 
