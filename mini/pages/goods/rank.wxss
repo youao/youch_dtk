@@ -1,0 +1,48 @@
+.nav-btn {
+	display: inline-block;
+	padding: 16rpx 20rpx 24rpx;
+	font-size: 32rpx;
+	line-height: 50rpx;
+	color: #999;
+}
+
+.nav-btn.on {
+	color: #212121;
+	font-weight: bold;
+	position: relative;
+}
+
+.nav-btn.on::after {
+	content: '';
+	height: 4rpx;
+	position: absolute;
+	right: 32rpx;
+	bottom: 15rpx;
+	left: 32rpx;
+	background: -webkit-linear-gradient(left, #e83b47, #E8666F 10%, #FDD9DB);
+}
+
+.category-box {
+	width: 100%;
+	padding-left: 30rpx;
+	box-sizing: border-box;
+	overflow-x: scroll;
+}
+
+.category-ul {
+	width: 2000rpx;
+}
+
+.category {
+	display: inline-block;
+	margin-right: 30rpx;
+	padding: 10rpx 0;
+	line-height: 40rpx;
+	color: #999;
+	box-sizing: border-box;
+}
+
+.category.on {
+	color: #212121;
+	font-weight: bold;
+}

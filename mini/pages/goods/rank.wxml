@@ -1,0 +1,17 @@
+<view>
+  <view class="fmix-align-sa">
+    <text class="nav-btn {{rankType == navs[index].type ? 'on' : ''}}" wx:for="{{navs}}" wx:key="index"
+      data-index="{{index}}" bindtap="switchNav">{{item.title}}</text>
+  </view>
+  <scroll-view scroll-x="true" scroll-left="{{categoryLeft}}" scroll-with-animation="true" class="category-box" hidden="{{!showCategory}}">
+    <view class="category-ul" style="width: {{categoryUlW}}rpx">
+      <block wx:for="{{category}}" wx:key="index">
+        <text class="category {{cid == category[index].cid ? 'on' : ''}}" 
+        data-cid="{{item.cid}}"
+          bindtap="switchCategory">{{item.cname}}</text>
+      </block>
+    </view>
+  </scroll-view>
+  <goods-list prop-list="{{list}}" />
+</view>
+<to-top id="fixbtn" />

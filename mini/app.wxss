@@ -3,7 +3,7 @@
 page {
   background-color: #f7f7f7;
   font-size: 28rpx;
-  color: #181818;
+  color: #2C3E50;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -60,12 +60,15 @@ image {
   display: flex;
   flex-direction: column;
 }
+
 .flex-con {
   flex: 1;
 }
+
 .flex-con-2 {
   flex: 2;
 }
+
 .flex-con-3 {
   flex: 3;
 }
@@ -73,14 +76,21 @@ image {
 .font-large {
   font-size: 40rpx;
 }
+
 .font-big {
   font-size: 32rpx;
 }
+
 .font-small {
   font-size: 24rpx;
 }
+
 .font-mini {
   font-size: 20rpx;
+}
+
+.font-theme {
+  color: #42B983;
 }
 
 .font-general {
@@ -113,4 +123,24 @@ image {
 
 .iconfont.tqg {
   color: #ff852a;
+}
+
+.bgb-red {
+  background-color: #FA88A1;
+}
+
+.bgb-yellow {
+  background-color: #FFEF62;
+}
+
+.bgb-green {
+  background-color: #E7F4A1;
+}
+
+.bgb-blue {
+  background-color: #B0DFFA;
+}
+
+.bgb-purple {
+  background-color: #CDC5F4;
 }

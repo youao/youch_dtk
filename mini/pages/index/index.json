@@ -1,8 +1,6 @@
 {
-  "navigationBarTitleText": "超级排行榜",
+  "navigationBarTitleText": "",
   "usingComponents": {
-    "goods-list": "../../components/GoodsList/index",
-    "to-top": "../../components/ToTop/index"
   },
   "enablePullDownRefresh": true
 }

@@ -1,17 +1,25 @@
 <view>
-  <view class="fmix-align-sa">
-    <text class="nav-btn {{rankType == navs[index].type ? 'on' : ''}}" wx:for="{{navs}}" wx:key="index"
-      data-index="{{index}}" bindtap="switchNav">{{item.title}}</text>
-  </view>
-  <scroll-view scroll-x="true" scroll-left="{{categoryLeft}}" scroll-with-animation="true" class="category-box" hidden="{{!showCategory}}">
-    <view class="category-ul" style="width: {{categoryUlW}}rpx">
-      <block wx:for="{{category}}" wx:key="index">
-        <text class="category {{cid == category[index].cid ? 'on' : ''}}" 
-        data-cid="{{item.cid}}"
-          bindtap="switchCategory">{{item.cname}}</text>
-      </block>
+  <view class="box">
+    <view class="row">
+      <text class="font-mini font-theme">置顶</text>
     </view>
-  </scroll-view>
-  <goods-list prop-list="{{list}}" />
+    <view class="row fmix-align hover">
+      <view class="flex-con">
+        <view class="cell title ellipsis">j卡的你可记得我就能打开请问大家OK去按时间大家看到你</view>
+        <view class="cell fmix-align">
+          <text class="color-block bgb-red"></text>
+          <text class="iconfont icon-shoucang1 i-xin"></text>
+          <text class="font-gray-tint font-small">2020-10-12 10:21</text>
+        </view>
+      </view>
+      <view class="check">
+        <text class="iconfont icon-chenggong1 i-check"></text>
+      </view>
+    </view>
+
+  </view>
 </view>
-<to-top id="fixbtn" />
+
+<view class="fixicon">
+  <text class="iconfont icon-zengjia1 font-theme i-add"></text>
+</view>
