@@ -1,0 +1,16 @@
+<view class="fmix-v" style="height: 100vh">
+  <view class="title fmix-align">
+    <input class="flex-con" type="text" placeholder="请输入" model:value="{{title}}" bindinput="fn" />
+    <text class="btn-finish font-theme" bindtap="finished">完成</text>
+    <text class="iconfont icon-shoucang1 i-xin {{xin?'on':''}}" bindtap="setXin"></text>
+  </view>
+  <view class="toolbar fmix-align">
+    <text class="iconfont icon-fuhao-jiacu" data-name="bold" bindtap="formatStyle"></text>
+    <text class="iconfont icon-fuhao-xiahuaxian" data-name="underline" bindtap="formatStyle"></text>
+    <text class="iconfont icon-fuhao-huaxian" data-name="strike" bindtap="formatStyle"></text>
+    <text class="iconfont icon-duoxuan" data-name="list" data-value="check" bindtap="formatStyle"></text>
+    <text class="iconfont icon-caidan1" style="font-size: 40rpx" data-name="list" data-value="bullet"
+      bindtap="formatStyle"></text>
+  </view>
+  <editor class="editor flex-con" bindready="onEditorReady"></editor>
+</view>

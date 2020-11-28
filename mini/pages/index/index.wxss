@@ -1,3 +1,7 @@
+page {
+  padding-bottom: 160rpx;
+}
+
 .fixicon {
   position: fixed;
   right: 40rpx;
@@ -18,7 +22,7 @@
   padding: 20rpx 40rpx;
 }
 
-.row.hover {
+.row:hover {
   background-color: rgba(180, 180, 180, 0.1);
 }
 
@@ -38,13 +42,33 @@
 
 .color-block {
   display: inline-block;
-  width: 30rpx;
-  height: 30rpx;
+  width: 24rpx;
+  height: 24rpx;
   border-radius: 50%;
   margin-right: 10rpx;
 }
 
 .check {
-  margin-left: 30rpx;
+  margin-right: 30rpx;
   font-size: 40rpx;
+}
+
+.fix-sheet {
+  width: 100%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 1rpx solid #ddd;
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.icon-sheet {
+  text-align: center;
+  padding: 20rpx 0;
+  width: 100rpx;
+}
+.icon-sheet .iconfont {
+  font-size: 48rpx;
 }

@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/goods/detail",
-    "pages/goods/rank"
+    "pages/goods/rank",
+    "pages/task/detail"
   ],
   "window": {
     "backgroundColor": "#f7f7f7",
