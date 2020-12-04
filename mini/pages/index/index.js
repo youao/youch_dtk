@@ -2,6 +2,8 @@ import {
   formatTime
 } from "../../utils/util"
 
+import {getAccessToken} from "../../api/common"
+
 Page({
 
   data: {
@@ -195,6 +197,12 @@ Page({
   },
 
   onLoad: function (options) {
+
+    getAccessToken().then(res=>{
+      console.log(res)
+    }).catch(err=>{
+      console.log(err)
+    })
 
   },
 

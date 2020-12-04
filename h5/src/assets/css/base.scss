@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $general;
+}
+
+span {
+    display: inline-block;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button,
+textarea {
+    border: 0;
+    font-size: 1em;
+    -webkit-appearance: none;
+    background: transparent;
+    outline: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../iconfont/iconfont.eot');
+    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), url('../iconfont/iconfont.woff2') format('woff2'), url('../iconfont/iconfont.woff') format('woff'), url('../iconfont/iconfont.ttf') format('truetype'), url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 1em;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flex-con {
+    @include flexCon();
+}
+
+.flex-con-2 {
+    @include flexCon(2);
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+}
+
+.flex-align {
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-align-end {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.flex-justify {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flex-justify-sa {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+.flex-justify-sb {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.flex-justify-end {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.flex-linefeed {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.fmix-v {
+    @extend .flex-wrap;
+    @extend .flex-vertical;
+}
+
+.fmix-center {
+    @extend .flex-wrap;
+    @extend .flex-justify;
+    @extend .flex-align;
+}
+
+.fmix-center-v {
+    @extend .flex-wrap;
+    @extend .flex-justify;
+    @extend .flex-align;
+    @extend .flex-vertical;
+}
+
+.fmix-align {
+    @extend .flex-wrap;
+    @extend .flex-align;
+}
+
+.fmix-align-sa {
+    @extend .flex-wrap;
+    @extend .flex-justify-sa;
+    @extend .flex-align;
+}
+
+.fmix-align-sb {
+    @extend .flex-wrap;
+    @extend .flex-justify-sb;
+    @extend .flex-align;
+}
+
+.fmix-vertical-sb {
+    @extend .flex-wrap;
+    @extend .flex-justify-sa;
+    @extend .flex-vertical;
+}

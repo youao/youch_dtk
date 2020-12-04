@@ -1,4 +1,6 @@
 <?php
+header('Access-Control-Allow-Origin:http://localhost:8080');
+header('Access-Control-Allow-Credentials:true');
 
 define('Url', 'https://openapi.dataoke.com/api');
 define('AppKey', '5fa60cc5b8c40');
