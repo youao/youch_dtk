@@ -1,7 +1,34 @@
 $theme: #42b983;
 $general: #2c3e50;
+$red: #e83b47;
+$gray: #7b7b7b;
+$gray-tint: #acacac;
+$gray-light: #d2d2d2;
+$white: #fff;
+$tmall: #ff0036;
+$jhs: #e61414;
+$tqg: #ff852a;
 @mixin flexCon($n: 1) {
     -webkit-box-flex: $n;
     -webkit-flex: $n;
     flex: $n;
+}
+
+@mixin ellipsis($n:1) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: $n;
+    -webkit-box-orient: vertical;
+}
+
+@mixin posiMagin {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 }
