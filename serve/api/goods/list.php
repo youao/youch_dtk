@@ -1,4 +1,6 @@
 <?php
+include "assets/sdk/ApiSdk.php";
+
 $c = new CheckSign;
 $c->host = Url . '/goods/get-goods-list';
 $c->appKey = AppKey;

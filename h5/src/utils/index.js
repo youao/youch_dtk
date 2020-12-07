@@ -38,3 +38,37 @@ export function jsonToStr(ops) {
     let suffix = ops.suffix || '';
     return str + suffix;
 }
+
+/**
+ * 监听滚动触底事件
+ * @options[element]，监听滚动的元素，默认指向window
+ * @options[callback]，触底回调
+ * @options[threshold]，到达底部多少距离触发回调
+ */
+export function evScrollout(options) {
+    if (typeof options == 'function') {
+        options = { callback: options };
+    }
+    if (typeof options.callback !== 'function') return;
+
+    var element = options.element;
+    var isWinow = !element || element.nodeType != 1;
+
+    var elListener = isWinow ? window : element;
+
+    var threshold = isNaN(threshold) ? 0 : threshold;
+
+    element = isWinow ? (document.documentElement || document.body) : element;
+
+    elListener.addEventListener('scroll', function() {
+        var clientH = isWinow ? element.clientHeight : element.offsetHeight;
+        var scrollT = element.scrollTop;
+        var scrollH = element.scrollHeight;
+
+        if (!scrollT) return; // 滚动条高度为0时不触发
+
+        if (clientH + scrollT - threshold >= scrollH) {
+            options.callback();
+        }
+    })
+}

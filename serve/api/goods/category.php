@@ -1,4 +1,6 @@
 <?php
+include "assets/sdk/ApiSdk.php";
+
 $c = new CheckSign;
 $c->host = Url . '/category/get-super-category';
 $c->appKey = AppKey;

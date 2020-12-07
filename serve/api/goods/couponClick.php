@@ -1,4 +1,6 @@
 <?php
+include "assets/sdk/ApiSdk.php";
+
 $c = new CheckSign;
 $c->host = Url . '/tb-service/get-privilege-link';
 $c->appKey = AppKey;
