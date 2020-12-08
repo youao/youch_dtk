@@ -5,7 +5,7 @@ $c = new CheckSign;
 $c->host = Url . '/goods/get-ranking-list';
 $c->appKey = AppKey;
 $c->appSecret = AppSecret;
-$c->version = 'v1.2.2';
+$c->version = 'v1.3.0';
 
 $params = array();
 $params['rankType'] = empty($_GET['rankType']) ? 1 : $_GET['rankType'];

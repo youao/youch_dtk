@@ -6,6 +6,7 @@
       :class="['fmix-center']"
       :style="{ height: '40px' }"
       size="24"
+      color="#42b983"
     />
   </div>
 </template>
@@ -15,7 +16,7 @@ import Vue from "vue";
 import { Loading } from "vant";
 Vue.use(Loading);
 
-import { getRankList } from "@/api/taobao";
+import { getGoodsList } from "@/api/taobao";
 import GoodsWaterFallList from "@/components/GoodsWaterFallList";
 import { evScrollout } from "@/utils";
 
@@ -30,7 +31,8 @@ export default {
       params: {
         page: 1,
         pageSize: 10,
-        rankType: 2
+        tmall: 1,
+        cache: 100
       },
       loading: false,
       finished: false,
@@ -38,21 +40,13 @@ export default {
   },
   mounted: function () {
     this.getList();
-
-    let element = document.getElementById("main");
-    let that = this;
-    evScrollout({
-      element,
-      callback() {
-        that.getList();
-      },
-    });
+    evScrollout(this.getList);
   },
   methods: {
     getList() {
       if (this.loading || this.finished) return;
       this.loading = true;
-      getRankList(this.params).then((res) => {
+      getGoodsList(this.params).then((res) => {
         console.log(res);
         let data = res.data || [];
         this.list.push.apply(this.list, data);

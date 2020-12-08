@@ -161,6 +161,15 @@ export default {
   margin-right: 4px;
   font-size: 1.4em;
 }
+.iconfont.tqg {
+  color: $tqg;
+}
+.iconfont.jhs {
+  color: $jhs;
+}
+.iconfont.tmall {
+  color: $tmall;
+}
 
 .sale {
     color: $gray-tint;

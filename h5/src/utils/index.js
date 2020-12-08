@@ -51,9 +51,13 @@ export function evScrollout(options) {
     }
     if (typeof options.callback !== 'function') return;
 
-    var element = options.element;
-    var isWinow = !element || element.nodeType != 1;
+    let element = options.element;
+    var elementMain = document.getElementById("main");
+    if (!element || elementMain) {
+        element = elementMain
+    }
 
+    var isWinow = !element || element.nodeType != 1;
     var elListener = isWinow ? window : element;
 
     var threshold = isNaN(threshold) ? 0 : threshold;

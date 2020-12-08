@@ -1,7 +1,8 @@
 import request from "@/utils/request";
 
 export function getGoodsList(data) {
-    return request.get('/goods/list', data);
+    const { cache } = data;
+    return request.get('/goods/list', data, { cache });
 }
 
 // 排行榜列表

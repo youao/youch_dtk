@@ -8,7 +8,7 @@
       :style="{
         width: colW + 'px',
         top: item.top ? item.top + 'px' : '100%',
-        left: item.left ? item.left + 'px' : '0',
+        left: item.left ? item.left + 'px' : 0,
       }"
     ></goods-con>
   </div>
@@ -24,13 +24,22 @@ export default {
   },
   props: {
     list: Array,
+    col: {
+      type: Number,
+      default: 2
+    },
+    space: {
+      type: Number,
+      default: 10
+    },
+    spaceBetween: {
+      type: Number,
+      default: 10
+    },
   },
   data() {
     return {
       colHs: [],
-      col: 2,
-      space: 10,
-      spaceBetween: 10,
       colW: 0,
     };
   },
@@ -47,9 +56,6 @@ export default {
   },
   watch: {
     "list.length": function (ln, oln) {
-      // this.$nextTick(() => {
-      //   this.computeItemPosition(ln, oln);
-      // });
       setTimeout(()=>{
         this.computeItemPosition(ln, oln);
       }, 500)
