@@ -1,8 +1,8 @@
 import axios from "axios";
 import app from "@/config";
 import { jsonToStr } from "@/utils";
+import Storages from "@/utils/storage";
 import md5 from "js-md5";
-import cookie from "@/utils/cookie";
 
 axios.defaults.withCredentials = true;
 
@@ -24,11 +24,8 @@ function baseRequest(options) {
             const { cache, method, url, params } = options;
             if (cache && method == 'get') {
                 let key = getUrlCacheKey(url, params);
-                console.log('2-', key, data);
-                let time = new Date().getTime() + cache * 1000;
-                cookie.set(key, JSON.stringify(data), time);
+                Storages.set(key, data, cache)
             }
-
             return Promise.resolve(data, res);
         }
     });
@@ -49,11 +46,8 @@ const request = ["post", "put", "patch"].reduce((request, method) => {
         const { cache } = options;
         if (cache && method == 'get') {
             let key = getUrlCacheKey(url, params);
-            let res = cookie.get(key);
-            console.log('1-', key, res);
-            console.log(cookie.all())
-
-            if (res) return JSON.parse(res);
+            let res = Storages.get(key);
+            if (res) return Promise.resolve(res);
         }
 
         return baseRequest(

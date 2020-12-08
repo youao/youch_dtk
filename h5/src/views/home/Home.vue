@@ -32,7 +32,7 @@ export default {
         page: 1,
         pageSize: 10,
         tmall: 1,
-        cache: 100
+        cache: 900
       },
       loading: false,
       finished: false,
