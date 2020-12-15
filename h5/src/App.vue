@@ -34,6 +34,6 @@ export default {
     position: relative;
   }
   #main {
-    overflow: scroll;
+    overflow-y: scroll;
   }
 </style>

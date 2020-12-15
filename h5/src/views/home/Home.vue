@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <goods-water-fall-list :list="list" />
+  <div :class="is_pc?'container':''">
+    <goods-water-fall-list :list="list" :col="col" />
     <van-loading
       v-show="loading && list.length"
       :class="['fmix-center']"
@@ -18,7 +18,7 @@ Vue.use(Loading);
 
 import { getGoodsList } from "@/api/taobao";
 import GoodsWaterFallList from "@/components/GoodsWaterFallList";
-import { evScrollout } from "@/utils";
+import { isPc, evScrollout } from "@/utils";
 
 export default {
   name: "Home",
@@ -27,16 +27,22 @@ export default {
   },
   data() {
     return {
+      is_pc: false,
       list: [],
+      col: 2,
       params: {
         page: 1,
-        pageSize: 10,
+        pageSize: 50,
         tmall: 1,
         cache: 900
       },
       loading: false,
       finished: false,
     };
+  },
+  created: function() {
+    this.is_pc = isPc();
+    this.col = isPc() ? 5 : 2;
   },
   mounted: function () {
     this.getList();
@@ -60,4 +66,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
 </style>

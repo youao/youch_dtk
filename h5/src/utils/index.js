@@ -8,6 +8,16 @@ export function isiOS() {
     return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 }
 
+export function isPc() {
+    const mobiles = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (const m of mobiles) {
+        if (u.indexOf(m) > -1) {
+            return false;
+        }
+    }
+    return true;
+}
+
 export function getDeviceOs() {
     if (isAndroid()) {
         return 'android';
@@ -15,7 +25,7 @@ export function getDeviceOs() {
     if (isiOS()) {
         return 'ios';
     }
-    return '';
+    return 'pc';
 }
 
 export function trim(str) {
