@@ -1,5 +1,15 @@
 <?php
-header('Access-Control-Allow-Origin:http://localhost:8080');
+$allow_origin = array( 
+    'http://localhost:8080', 
+    'http://www.youch.club' 
+);
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : ''; 
+if (in_array($origin, $allow_origin)) {
+    header('Access-Control-Allow-Origin:' . $origin);
+} else {
+    return;
+}
+
 header('Access-Control-Allow-Credentials:true');
 header("Content-Type: text/html;charset=utf-8");
 

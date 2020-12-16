@@ -28,6 +28,14 @@ const routes = [...routes_footer, {
     component: () =>
         import ('@/views/home/Home')
 }, ...user, {
+    path: '/taobao/detail/:id',
+    name: 'TaobaoDetail',
+    meta: {
+        title: '宝贝详情',
+    },
+    component: () =>
+        import ('@/views/taobao/Detail.vue')
+}, {
     path: '*',
     name: 'NotDefined',
     component: () =>

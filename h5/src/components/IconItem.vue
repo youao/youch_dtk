@@ -31,8 +31,8 @@ export default {
 }
 .icon img,
 .icon i.iconfont {
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 .icon img {
   display: block;
@@ -40,12 +40,12 @@ export default {
 }
 .icon i.iconfont {
   display: inline-block;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
   color: inherit;
 }
 .icon p {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: inherit;
 }
 </style>

@@ -43,6 +43,6 @@ export default {
 <style scoped>
 .footer {
   border-top: 1px solid #eee;
-  height: 50px;
+  height: 5rem;
 }
 </style>

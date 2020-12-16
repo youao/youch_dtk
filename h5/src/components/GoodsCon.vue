@@ -1,17 +1,12 @@
-
-
 <template>
-  <div class="goods">
+  <router-link :to="'/taobao/detail/'+item.id" class="goods">
     <div class="goods-img">
       <img :src="item.marketingMainPic || item.mainPic" alt="" />
       <i v-if="item.video" class="iconfont v-play">&#xe614;</i>
     </div>
     <div class="goods-info">
       <div class="goods-title ellipsis-2">
-        <span
-          v-if="item.shopType == 1"
-          class="iconfont tmall"
-        >&#xe799;</span>
+        <span v-if="item.shopType == 1" class="iconfont tmall">&#xe799;</span>
         {{ item.dtitle }}
       </div>
       <div v-if="item.brandId" class="goods-row">
@@ -28,14 +23,8 @@
         </div>
       </div>
       <div class="goods-row">
-        <i
-          v-if="item.activityType == 2"
-          class="iconfont tqg"
-        >&#xe608;</i>
-        <i
-          v-else-if="item.activityType == 3"
-          class="iconfont jhs"
-        >&#xe609;</i>
+        <i v-if="item.activityType == 2" class="iconfont tqg">&#xe608;</i>
+        <i v-else-if="item.activityType == 3" class="iconfont jhs">&#xe609;</i>
         <span class="goods-tip" v-if="item.freeshipRemoteDistrict"
           >偏远包邮</span
         >
@@ -44,7 +33,7 @@
         >
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -57,18 +46,20 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .goods {
-  width: 150px;
-  border-radius: 10px;
+  width: 15rem;
+  border-radius: 1rem;
   overflow: hidden;
   background-color: $white;
-  /* opacity: 0;
-  z-index: -1; */
+  opacity: 0;
+  z-index: -1;
   transition: top 0.5s, opacity 0.5s, zIndex 0.5s;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -80,85 +71,85 @@ export default {
 }
 
 .v-play {
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   @include posiMagin;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   color: $white;
-  font-size: 22px;
-  line-height: 50px;
+  font-size: 2.2rem;
+  line-height: 5rem;
   text-align: center;
 }
 
 .goods-info {
-  padding: 6px 3px 3px 6px;
+  padding: 0.6rem 0.3rem 0.3rem 0.6rem;
 }
 
 .goods-title {
-  margin-bottom: 6px;
+  margin-bottom: 0.6rem;
 }
 
 .goods-tip {
   display: inline-block;
-  font-size: 10px;
-  line-height: 16px;
+  font-size: 1rem;
+  line-height: 1.6rem;
   color: #acacac;
   background-color: #f5f5f5;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   border: 1px solid $gray-light;
-  padding: 5px;
-  margin-right: 5px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .goods-quan-box {
   position: relative;
   overflow: hidden;
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 
 .goods-quan {
-  font-size: 10px;
+  font-size: 1rem;
   line-height: 1.5;
   color: $red;
   background-color: #fde9ea;
-  border-radius: 3px;
+  border-radius: 0.3rem;
   box-sizing: border-box;
-  padding: 0 8px;
+  padding: 0 0.8rem;
 }
 
 .goods-quan-dot {
   color: inherit;
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
-  left: -3px;
+  left: -0.3rem;
   background: $white;
 }
 
 .goods-quan-dot.right {
-  right: -3px;
+  right: -0.3rem;
   left: auto;
 }
 
 .goods-row {
-  font-size: 12px;
-  padding-bottom: 6px;
+  font-size: 1.2rem;
+  padding-bottom: 0.6rem;
 }
 
 .goods-priceval {
-  font-size: 18px;
-  margin-right: 5px;
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
 }
 
 .iconfont.tqg,
 .iconfont.jhs {
-  margin-right: 4px;
+  margin-right: 0.4rem;
   font-size: 1.4em;
 }
 .iconfont.tqg {
@@ -172,6 +163,6 @@ export default {
 }
 
 .sale {
-    color: $gray-tint;
+  color: $gray-tint;
 }
 </style>

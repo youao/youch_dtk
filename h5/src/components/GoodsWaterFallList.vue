@@ -16,6 +16,7 @@
 
 <script>
 import GoodsCon from "@/components/GoodsCon";
+const dpr = window.devicePixelRatio;
 
 export default {
   name: "GoodsWaterFallList",
@@ -26,15 +27,15 @@ export default {
     list: Array,
     col: {
       type: Number,
-      default: 2
+      default: 2,
     },
     space: {
       type: Number,
-      default: 10
+      default: 10 * dpr,
     },
     spaceBetween: {
       type: Number,
-      default: 10
+      default: 10 * dpr,
     },
   },
   data() {
@@ -48,20 +49,19 @@ export default {
       return Math.max.apply(null, this.colHs) + this.space;
     },
   },
-  created: function () {
+  mounted: function () {
     let container = document.getElementsByClassName("waterfall")[0];
     let conW = (container || document.body).offsetWidth;
     const { col, space, spaceBetween } = this;
-    this.colW = (conW - spaceBetween * col - (col - 1) * space) / col;
+    this.colW = (conW - spaceBetween * 2 - (col - 1) * space) / col;
   },
   watch: {
     "list.length": function (ln, oln) {
-      setTimeout(()=>{
+      setTimeout(() => {
         this.computeItemPosition(ln, oln);
-      }, 500)
+      }, 500);
     },
   },
-  mounted: function () {},
   methods: {
     computeItemPosition: function (ln, oln) {
       let { col, space, spaceBetween, colW, list, colHs } = this;
@@ -114,6 +114,7 @@ export default {
 .show {
   position: absolute;
   opacity: 1;
+  z-index: 1;
 }
 .hide {
   position: absolute;

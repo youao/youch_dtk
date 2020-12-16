@@ -9,6 +9,7 @@ Router.prototype.push = function push(location) {
 }
 
 import '@/assets/css/base.scss'
+import '@/utils/flexible.js'
 
 Vue.config.productionTip = false
 
