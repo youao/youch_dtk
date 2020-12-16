@@ -1,10 +1,8 @@
 <?php
-include "assets/sdk/ApiSdk.php";
+include "assets/dtkSdk/ApiSdk.php";
 
 $c = new CheckSign;
-$c->host = Url . '/tb-service/get-privilege-link';
-$c->appKey = AppKey;
-$c->appSecret = AppSecret;
+$c->host = '/tb-service/get-privilege-link';
 $c->version = 'v1.3.0';
 
 $params = array();

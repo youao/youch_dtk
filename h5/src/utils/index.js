@@ -63,8 +63,10 @@ export function evScrollout(options) {
 
     let element = options.element;
     var elementMain = document.getElementById("main");
-    if (!element || elementMain) {
+    if (!element && elementMain) {
         element = elementMain
+    } else if (typeof element == 'string') {
+        element = document.querySelector(element);
     }
 
     var isWinow = !element || element.nodeType != 1;

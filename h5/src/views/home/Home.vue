@@ -1,5 +1,5 @@
 <template>
-  <div :class="is_pc ? 'pc' : ''">
+  <div class="container" :class="is_pc ? 'pc' : ''">
     <section class="fmix-center-v" style="padding-top: 10rem">
       <h1>
         <span>Welcome to YouCH!</span>
@@ -100,7 +100,7 @@ export default {
       col: 2,
       params: {
         page: 1,
-        pageSize: 50,
+        pageSize: 10,
         tmall: 1,
         cache: 900,
       },
@@ -114,7 +114,10 @@ export default {
   },
   mounted: function () {
     this.getList();
-    evScrollout(this.getList);
+    evScrollout({
+      element: ".container",
+      callback: this.getList,
+    });
   },
   methods: {
     getList() {
@@ -133,6 +136,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  height: 100%;
+  overflow-y: scroll;
+}
 .pc {
   width: 1000px;
   margin: 0 auto;
@@ -158,6 +165,7 @@ h1 {
   border-radius: 1rem;
   background: #fff;
   font-size: 1rem;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 .nav-con:last-of-type {
   margin-right: 0;

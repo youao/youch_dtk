@@ -58,9 +58,6 @@ export default {
   border-radius: 1rem;
   overflow: hidden;
   background-color: $white;
-  opacity: 0;
-  z-index: -1;
-  transition: top 0.5s, opacity 0.5s, zIndex 0.5s;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 

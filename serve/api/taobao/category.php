@@ -1,10 +1,8 @@
 <?php
-include "assets/sdk/ApiSdk.php";
+include "assets/dtkSdk/ApiSdk.php";
 
 $c = new CheckSign;
-$c->host = Url . '/category/get-super-category';
-$c->appKey = AppKey;
-$c->appSecret = AppSecret;
+$c->host = '/category/get-super-category';
 $c->version = 'v1.1.0';
 
 $params = array();

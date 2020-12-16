@@ -2,7 +2,7 @@ import request from "@/utils/request";
 
 export function getGoodsList(data) {
     const { cache } = data;
-    return request.get('/goods/list', data, { cache });
+    return request.get('/taobao/list', data, { cache });
 }
 
 
@@ -10,7 +10,7 @@ export function getGoodsList(data) {
  * 获取商品详情
  */
 export function getGoodsDetail(id) {
-    return request.get("/goods/detail", {
+    return request.get("/taobao/detail", {
         id
     }, { cache: 60 });
 }
@@ -19,7 +19,7 @@ export function getGoodsDetail(id) {
  * 获取商品优惠券跳转链接/口令
  */
 export function getCouponClickUrl(goodsId) {
-    return request.get("/goods/couponClick", {
+    return request.get("/taobao/couponClick", {
         goodsId
     });
 }
@@ -28,12 +28,12 @@ export function getCouponClickUrl(goodsId) {
  * 获取排行榜列表
  */
 export function getRankList(data) {
-    return request.get("/goods/rankList", data);
+    return request.get("/taobao/rankList", data);
 }
 
 /**
  * 获取商品分类
  */
 export function getCategory() {
-    return request.get("/goods/category");
+    return request.get("/taobao/category");
 }

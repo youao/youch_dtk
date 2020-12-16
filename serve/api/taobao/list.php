@@ -1,10 +1,8 @@
 <?php
-include "assets/sdk/ApiSdk.php";
+include "assets/dtkSdk/ApiSdk.php";
 
 $c = new CheckSign;
-$c->host = Url . '/goods/get-goods-list';
-$c->appKey = AppKey;
-$c->appSecret = AppSecret;
+$c->host = '/goods/get-goods-list';
 $c->version = 'v1.2.4';
 
 $params = array();

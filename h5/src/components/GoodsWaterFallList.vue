@@ -4,7 +4,7 @@
       v-for="(item, index) in list"
       :key="index"
       :item="item"
-      :class="item.top ? 'show' : 'hide'"
+      :class="[item.top ? 'show' : '', 'wf-con', conClass]"
       :style="{
         width: colW + 'px',
         top: item.top ? item.top + 'px' : '100%',
@@ -25,6 +25,7 @@ export default {
   },
   props: {
     list: Array,
+    name: String,
     col: {
       type: Number,
       default: 2,
@@ -42,6 +43,7 @@ export default {
     return {
       colHs: [],
       colW: 0,
+      conClass: name ? name : "wf_" + new Date().getTime(),
     };
   },
   computed: {
@@ -64,8 +66,8 @@ export default {
   },
   methods: {
     computeItemPosition: function (ln, oln) {
-      let { col, space, spaceBetween, colW, list, colHs } = this;
-      let els = document.getElementsByClassName("goods");
+      let { col, space, spaceBetween, colW, list, colHs, conClass } = this;
+      let els = document.getElementsByClassName(conClass);
 
       for (let i = oln; i < ln; i++) {
         let o = els[i].offsetHeight;
@@ -111,14 +113,16 @@ export default {
 .waterfall {
   position: relative;
 }
-.show {
-  position: absolute;
-  opacity: 1;
-  z-index: 1;
-}
-.hide {
+.wf-con {
+  transition: top 0.5s, opacity 0.5s, zIndex 0.5s;
   position: absolute;
   top: 100%;
   opacity: 0;
+  z-index: -1;
+}
+.wf-con.show {
+  position: absolute;
+  opacity: 1;
+  z-index: 1;
 }
 </style>

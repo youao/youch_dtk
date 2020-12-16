@@ -4,8 +4,8 @@ class CheckSign
 {
 
     public $host='';//请求地址
-    public $appKey='';//app_key
-    public $appSecret='';//app_secret
+    public $appKey='5fa60cc5b8c40';//app_key
+    public $appSecret='b75ab507b1571acc14b9cbe50a4a2fe5';//app_secret
     public $version='';//版本号
 
     /**参数加密
@@ -26,7 +26,7 @@ class CheckSign
     }
 
     function request($params,$type="GET"){
-        $host = $this->host;
+        $host = 'https://openapi.dataoke.com/api' . $this->host;
         $appKey = $this->appKey;
         $appSecret = $this->appSecret;
         $version = $this->version;
@@ -93,5 +93,3 @@ class CheckSign
         }
     }
 }
-
-?>
