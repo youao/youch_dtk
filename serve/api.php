@@ -11,7 +11,6 @@ if (in_array($origin, $allow_origin)) {
 }
 
 header('Access-Control-Allow-Credentials:true');
-header("Content-Type: text/html;charset=utf-8");
 
 include 'utils/request.php';
 

@@ -58,7 +58,7 @@ import Vue from "vue";
 import { Loading } from "vant";
 Vue.use(Loading);
 
-import { getGoodsList, getJdTest } from "@/api/taobao";
+import { getGoodsList } from "@/api/taobao";
 import GoodsWaterFallList from "@/components/GoodsWaterFallList";
 import { isPc, evScrollout } from "@/utils";
 
@@ -118,10 +118,6 @@ export default {
       element: ".container",
       callback: this.getList,
     });
-
-    getJdTest().then(res=>{
-      console.log(res)
-    })
   },
   methods: {
     getList() {

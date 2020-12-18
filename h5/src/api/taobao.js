@@ -37,10 +37,3 @@ export function getRankList(data) {
 export function getCategory() {
     return request.get("/taobao/category");
 }
-
-/**
- * test
- */
-export function getJdTest() {
-    return request.get("/jd/test");
-}
