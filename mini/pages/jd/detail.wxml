@@ -1,0 +1,68 @@
+<view>
+  <swiper indicator-dots="true" autoplay="true" style="height:750rpx">
+    <swiper-item wx:for="{{goods.imageInfo.imageList}}" wx:key="index">
+      <image src="{{item.url}}" style="height:750rpx" lazy-load="true"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="row top">
+  <view class="cell">
+    <text class="font-red">￥<text class="strong">{{goods.priceInfo.lowestCouponPrice}}</text></text>
+    <text>券后</text>
+    <text class="font-gray-tint" style="margin-left: 20rpx">原价￥{{goods.priceInfo.price}}</text>
+  </view>
+
+  <view wx:for="{{goods.couponInfo.couponList}}" wx:key="index" class="coupon font-red fmix-align" bindtap="getCoupon">
+    <view class="coupon-val">￥<text class="val">{{item.discount}}</text></view>
+    <view class="coupon-info">
+      <view>优惠券</view>
+      <view class="font-mini">截止{{item.useEndTime}}</view>
+    </view>
+    <div class="coupon-btn">立即领券</div>
+  </view>
+
+  <view class="cell title">{{goods.skuName}}</view>
+  <view class="cell font-gray-tint">{{goods.skuName}}</view>
+
+  <view wx:if="{{goods.brandCode}}" class="cell">
+    <text class="cell-key">品牌</text>
+    <text>{{goods.brandName}}</text>
+  </view>
+</view>
+
+<view wx:if="{{goods.shopInfo.shopId && goods.shopInfo.shopLevel>0}}" class="row shop fmix-align">
+  <view class="shop-info flex-con">
+    <view class="shop-name">{{goods.shopInfo.shopName}}</view>
+    <view class="fmix-align-sb font-gray">
+      <view>
+        综合评价{{goods.shopInfo.userEvaluateScore}}
+        {{goods.shopInfo.commentFactorScoreRankGrade}}
+      </view>
+      <view>
+        物流服务{{goods.shopInfo.logisticsLvyueScore}}
+        {{goods.shopInfo.logisticsFactorScoreRankGrade}}
+      </view>
+      <view>
+        售后服务{{goods.shopInfo.afterServiceScore}}
+        {{goods.shopInfo.afsFactorScoreRankGrade}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{goods.detailPics}}" class="row">
+  <view class="cell des-title">
+    <text class="cell-key">宝贝详情</text>
+  </view>
+  <block wx:for="{{goods.detailPics}}" wx:key="index">
+    <image src="http:{{item.img}}" mode="widthFix" lazy-load="true"></image>
+  </block>
+</view>
+
+<view class="row fixed-foot fmix-center {{coupon.tpwd?'success':''}}" bindtap="getCoupon">
+  <text wx:if="{{!coupon.tpwd}}">立即领券购买</text>
+  <text wx:else>口令已复制，前往淘宝领券</text>
+</view>
+
+<to-top id="fixbtn" />

@@ -1,4 +1,4 @@
-import request from "./../utils/request.js";
+import request from "../utils/request.js";
 /**
  * 获取商品列表
  */

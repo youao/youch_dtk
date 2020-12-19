@@ -1,0 +1,32 @@
+<view class="list" style="height:{{waterFallsHeight}}rpx;">
+  <view class="goods {{positionList[index].top ? 'show' : ''}}" wx:for="{{propList}}" wx:key="index"
+    style="width:{{columnWidth}}rpx;top:{{positionList[index].top}}rpx;left:{{positionList[index].left}}rpx"
+    data-item="{{item}}"
+    bindtap="toDetail">
+    <view class="goods-img" style="height:{{columnWidth}}rpx">
+      <image src="{{item.imageInfo.imageList[0].url}}" lazy-load="true" mode="widthFix"></image>
+`    </view>
+    <view class="goods-info">
+      <view class="goods-title ellipsis-2">
+        <text class="iconfont icon-jingdong jd"></text>
+        {{item.skuName}}
+      </view>
+      <view class="goods-row font-red fmix-align">
+        券后￥<text class="goods-priceval">{{item.priceInfo.lowestCouponPrice}}</text>
+        <view class="goods-quan-box" wx:if="item.couponInfo.couponList.length">
+          <text class="goods-quan-dot"></text>
+          <view class="goods-quan">
+            <text>{{item.couponInfo.couponList[0].discount}}元券</text>
+          </view>
+          <text class="goods-quan-dot right"></text>
+        </view>
+      </view>
+      <view class="goods-row" wx-if="{{item.priceInfo.historyPriceDay}}">
+        <view class="goods-tip blue fmix-align">
+          <text class="iconfont icon-dijia"></text>
+          <text>近{{item.priceInfo.historyPriceDay}}天最低价</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/goods/detail",
+    "pages/home/home",
     "pages/goods/rank",
-    "pages/task/detail"
+    "pages/goods/detail",
+    "pages/jd/eliteList",
+    "pages/jd/detail"
   ],
   "window": {
     "backgroundColor": "#f7f7f7",

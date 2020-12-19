@@ -1,17 +1,13 @@
 const Base = {
   url: 'https://www.xiaoxishengqian.com/ych/api.php',
-  wxOpenUrl: 'https://api.weixin.qq.com',
   header: {}
 };
 
 export default function request(api, method, data, opt) {
-  if (opt.wxOpen) {
-    api = Base.wxOpenUrl + api;
-  }
   const url = (api || '').indexOf('http') == 0 ? api : (opt.url || Base.url) + api;
   return new Promise((reslove, reject) => {
     wx.request({
-      url: url,
+      url,
       method: method || 'GET',
       header: opt.header || Base.header,
       data: data || {},

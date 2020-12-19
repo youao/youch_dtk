@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "jd-list": "../../components/GoodsList/jd",
+    "to-top": "../../components/ToTop/index"
+  },
+  "enablePullDownRefresh": true
+}

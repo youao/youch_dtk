@@ -1,0 +1,15 @@
+.navs {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+}
+.nav-con {
+  width: 20%;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 24rpx;
+}
+.nav-con image {
+  width: 80rpx;
+  height: 80rpx;
+}
