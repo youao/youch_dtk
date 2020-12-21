@@ -1,0 +1,28 @@
+<view class="list" style="height:{{waterFallsHeight}}rpx;">
+  <view class="goods {{positionList[index].top ? 'show' : ''}}" wx:for="{{propList}}" wx:key="index"
+    style="width:{{columnWidth}}rpx;top:{{positionList[index].top}}rpx;left:{{positionList[index].left}}rpx"
+    data-item="{{item}}" bindtap="toDetail">
+    <view class="goods-img" style="height:{{columnWidth}}rpx">
+      <image src="{{item.goods_thumbnail_url}}" lazy-load="true" mode="widthFix"></image>
+    </view>
+    <view class="goods-info">
+      <view class="goods-title ellipsis-2">
+        <text class="iconfont icon-pinduoduo pdd"></text>
+        {{item.goods_name}}
+      </view>
+      <view class="goods-row font-red fmix-align">
+        <text wx:if="{{item.has_coupon}}">券后</text>￥<text class="goods-priceval">{{item.min_group_price/100}}</text>
+        <view class="goods-quan-box" wx:if="{{item.has_coupon}}">
+          <text class="goods-quan-dot"></text>
+          <view class="goods-quan">
+            <text>{{item.coupon_discount/100}}元券</text>
+          </view>
+          <text class="goods-quan-dot right"></text>
+        </view>
+      </view>
+      <view class="goods-row font-gray" wx-if="{{item.sales_tip}}">
+        <text>{{item.sales_tip}}人已抢</text>
+      </view>
+    </view>
+  </view>
+</view>

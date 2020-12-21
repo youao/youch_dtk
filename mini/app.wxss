@@ -116,9 +116,15 @@ image {
 .iconfont.tmall {
   color: #ff0036;
 }
+
 .iconfont.jd {
   color: #c81522;
 }
+
+.iconfont.pdd {
+  color: #f2050b;
+}
+
 .iconfont.jhs {
   color: #e61414;
 }

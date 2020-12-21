@@ -1,0 +1,138 @@
+page {
+  padding-bottom: 100rpx;
+}
+
+.row {
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 4rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+  padding: 20rpx 30rpx;
+}
+
+.row.top {
+  border-radius: 0 0 20rpx 20rpx;
+}
+
+.cell {
+  padding: 10rpx;
+  font-size: 24rpx;
+}
+
+.strong {
+  font-size: 40rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  margin-right: 8rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.coupon {
+  background-color: #FDE9EA;
+  margin: 30rpx 0 20rpx;
+  padding: 24rpx 0;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.coupon-info {
+  flex: 1;
+  line-height: 1.6;
+}
+
+.coupon-val {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 0 30rpx;
+}
+
+.coupon-val .val {
+  font-size: 50rpx;
+}
+
+.coupon-btn {
+  position: relative;
+  padding: 0 40rpx;
+}
+
+.coupon-btn::after {
+  content: '';
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 1rpx solid #F5D1D8;
+  box-sizing: -2rpx 0 6rpx rgba(245, 209, 216, 0.3);
+}
+
+.cell-key {
+  display: inline-block;
+  min-width: 100rpx;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+
+.des-title {
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.des-title .cell-key {
+  position: relative;
+  padding-bottom: 30rpx;
+}
+
+.des-title .cell-key::after {
+  content: '';
+  height: 4rpx;
+  position: absolute;
+  right: 12rpx;
+  bottom: 15rpx;
+  left: 12rpx;
+  background: -webkit-linear-gradient(left, #e83b47, #E8666F 10%, #FDD9DB);
+}
+
+.shop-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+  overflow: hidden;
+}
+
+.shop-img image {
+  width: auto;
+  height: 100%;
+}
+
+.shop-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.fixed-foot {
+  height: 88rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background: #212121;
+  position: fixed;
+  right: 30rpx;
+  bottom: 10rpx;
+  left: 30rpx;
+  margin: auto;
+  box-sizing: border-box;
+  z-index: 99;
+  border-radius: 44rpx;
+  box-shadow: 0 4rpx 4rpx rgba(0, 0, 0, 0.3);
+  transition: background 0.5s;
+}

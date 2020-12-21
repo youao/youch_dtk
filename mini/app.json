@@ -4,7 +4,9 @@
     "pages/goods/rank",
     "pages/goods/detail",
     "pages/jd/eliteList",
-    "pages/jd/detail"
+    "pages/jd/detail",
+    "pages/pdd/channelList",
+    "pages/pdd/detail"
   ],
   "window": {
     "backgroundColor": "#f7f7f7",

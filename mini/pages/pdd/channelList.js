@@ -1,38 +1,12 @@
 import {
-  getPddRecommend,
+  getPddRecommend
 } from '../../api/pdd.js';
 
 Page({
 
   data: {
-    navs: [{
-        title: "实时热销",
-        img: "/assets/image/icon_bd.png",
-        url: '/pages/pdd/channelList?title=实时热销&channel_type=5'
-      },
-      {
-        title: "今日必推",
-        img: "/assets/image/icon_tj.png",
-        url: '/pages/pdd/channelList?title=今日必推&channel_type=8'
-      },
-      {
-        title: "精选好物",
-        img: "/assets/image/icon_jx.png",
-        url: '/pages/pdd/channelList?title=精选好物&channel_type=2'
-      },
-      {
-        title: "今日爆品",
-        img: "/assets/image/icon_bk.png",
-        url: '/pages/pdd/channelList?title=今日爆品&channel_type=1'
-      },
-      {
-        title: "历史低价",
-        img: "/assets/image/icon_dj.png",
-        url: '/pages/pdd/channelList?title=历史低价&channel_type=0'
-      }
-    ],
     list: [],
-    channel_type: 7,
+    channel_type: 0,
     page: 1,
     pageSize: 20,
     loading: false,
@@ -98,17 +72,20 @@ Page({
     });
   },
 
-  adJump(e) {
-    const {
-      url
-    } = e.currentTarget.dataset;
-    wx.navigateTo({
-      url
-    })
-  },
-
   onLoad: function (options) {
-    this.getData();
+    const {
+      title,
+      channel_type
+    } = options;
+    wx.setNavigationBarTitle({
+      title,
+    })
+    this.setData({
+      channel_type
+    })
+    wx.nextTick(() => {
+      this.getData();
+    })
   },
 
   onPullDownRefresh: function () {

@@ -1,0 +1,60 @@
+<view>
+  <swiper indicator-dots="true" autoplay="true" style="height:750rpx">
+    <swiper-item wx:for="{{goods.goods_gallery_urls}}" wx:key="index">
+      <image src="{{item}}" style="height:750rpx" lazy-load="true"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="row top">
+  <view class="cell">
+    <text class="font-red">￥<text class="strong">{{goods.min_group_price/100}}</text></text>
+    <text>拼团价</text>
+    <text class="font-gray-tint" style="margin-left: 20rpx">单买价￥{{goods.min_normal_price/100}}</text>
+  </view>
+
+  <navigator wx:if="{{goods.has_coupon}}" class="coupon font-red fmix-align" target="miniProgram" open-type="navigate" app-id="{{we_app_info.app_id}}"
+  path="{{we_app_info.page_path}}">
+    <view class="coupon-val">￥<text class="val">{{goods.coupon_discount/100}}</text></view>
+    <view class="coupon-info">
+      <view>优惠券</view>
+      <view class="font-mini">截止{{goods.coupon_end_time_str}}</view>
+    </view>
+    <div class="coupon-btn">立即领券</div>
+  </navigator>
+
+  <view class="cell title">{{goods.goods_name}}</view>
+  <view class="cell font-gray-tint">{{goods.goods_desc}}</view>
+
+  <view class="cell">
+    <text class="cell-key">销量</text>
+    <text>{{goods.sales_tip}}件</text>
+  </view>
+</view>
+
+<view wx:if="{{goods.mall_id}}" class="row shop fmix-align">
+  <view class="shop-info flex-con">
+    <view class="shop-name">
+      {{goods.mall_name}}
+    </view>
+    <view class="fmix-align-sb font-gray">
+      <view>
+        描述{{goods.desc_txt}}
+      </view>
+      <view>
+        物流{{goods.lgst_txt}}
+      </view>
+      <view>
+        服务{{goods.serv_txt}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<navigator class="row fixed-foot fmix-center" target="miniProgram" open-type="navigate" app-id="{{we_app_info.app_id}}"
+  path="{{we_app_info.page_path}}">
+  <text wx:if="{{!goods.has_coupon}}">立即购买</text>
+  <text wx:else>立即领券购买</text>
+</navigator>
+
+<to-top id="fixbtn" />

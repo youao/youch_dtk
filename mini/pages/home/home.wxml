@@ -4,9 +4,5 @@
     <text>{{item.title}}</text>
   </view>
 </view>
-<navigator class="long-btn active" target="miniProgram" open-type="navigate" app-id="wx32540bd863b27570"
-  path="package_a/welfare_coupon/welfare_coupon?goods_id=204424607294&pid=10529200_182605056&goods_sign=c9v2jfLpCKpNhvXhwfPY9gq2gaw8_JQ14oOM13y&zs_duo_id=10529200&cpsSign=CC_201221_10529200_182605056_77fdd09b6f69904603a95f54a5d9a40c&duoduo_type=2">
-  自购省
-</navigator>
-<jd-list prop-list="{{list}}" />
+<pdd-list prop-list="{{list}}" />
 <to-top id="fixbtn" />
