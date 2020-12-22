@@ -9,10 +9,19 @@ export function getJdJingfen(data = {}, cache = 300) {
 }
 
 /**
- * 获取sku商品商品
+ * 获取sku商品详情
  */
 export function getJdSkuItem(id) {
   return request.get("/jd/skuItem", {
+    id
+  });
+}
+
+/**
+ * 获取sku商品跳转
+ */
+export function getJdPromotion(id) {
+  return request.get("/jd/promotion", {
     id
   });
 }

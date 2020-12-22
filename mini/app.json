@@ -3,6 +3,7 @@
     "pages/home/home",
     "pages/goods/rank",
     "pages/goods/detail",
+    "pages/jd/index",
     "pages/jd/eliteList",
     "pages/jd/detail",
     "pages/pdd/channelList",

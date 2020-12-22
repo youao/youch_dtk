@@ -4,5 +4,26 @@
     <text>{{item.title}}</text>
   </view>
 </view>
+
+<view class="step-box">
+  <view class="step-title">
+    <text>省钱三步走</text>
+  </view>
+  <view class="steps">
+    <view class="step-con">
+      <text class="step-num">1</text>
+      <text>挑选宝贝</text>
+    </view>
+    <view class="step-con">
+      <text class="step-num">2</text>
+      <text>跳转领券</text>
+    </view>
+    <view class="step-con">
+      <text class="step-num">3</text>
+      <text>购买省钱</text>
+    </view>
+  </view>
+</view>
+
 <pdd-list prop-list="{{list}}" />
 <to-top id="fixbtn" />

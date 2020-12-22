@@ -1,5 +1,5 @@
 import {
-  getJdSkuItem
+  getJdPromotion
 } from '../../api/jd';
 
 Page({
@@ -18,20 +18,29 @@ Page({
       id: options.id,
       goods
     })
-    console.log(goods)
+    // console.log(goods)
+    wx.nextTick(()=>{
+      this.getCoupon();
+    })
   },
 
   getCoupon() {
-    let gid = this.data.goods.goodsId;
-    let tpwd = this.data.coupon.tpwd;
-    if (tpwd) {
-      return this.copyKongling(tpwd)
-    }
-    getCouponClickUrl(gid).then(res => {
+    // let gid = this.data.goods.goodsId;
+    // let tpwd = this.data.coupon.tpwd;
+    // if (tpwd) {
+    //   return this.copyKongling(tpwd)
+    // }
+    getJdPromotion(this.data.id).then(res => {
+      // this.setData({
+      //   coupon: res.data
+      // })
+      // this.copyKongling(res.data.tpwd)
+      // console.log(res)
+      let url = res.data.clickUrl;
+      let path = 'pages/proxy/union/union?spreadUrl=' + url + '&customerinfo=duoduokeji';
       this.setData({
-        coupon: res.data
+        path
       })
-      this.copyKongling(res.data.tpwd)
     })
   },
 

@@ -1,0 +1,8 @@
+<view class="navs">
+  <view class="nav-con" wx:for="{{navs}}" wx:key="index" data-url="{{item.url}}" bindtap="adJump">
+    <image src="{{item.img}}"></image>
+    <text>{{item.title}}</text>
+  </view>
+</view>
+<jd-list prop-list="{{list}}" />
+<to-top id="fixbtn" />

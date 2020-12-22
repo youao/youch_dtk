@@ -60,9 +60,10 @@
   </block>
 </view>
 
-<view class="row fixed-foot fmix-center {{coupon.tpwd?'success':''}}" bindtap="getCoupon">
+<navigator class="row fixed-foot fmix-center {{coupon.tpwd?'success':''}}" target="miniProgram" open-type="navigate" app-id="wx13e41a437b8a1d2e"
+  path="{{path}}">
   <text wx:if="{{!coupon.tpwd}}">立即领券购买</text>
   <text wx:else>口令已复制，前往淘宝领券</text>
-</view>
+</navigator>
 
 <to-top id="fixbtn" />
