@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>油菜花</title>
+    <meta name="keywords" content="优惠券,油菜花,油菜花棒">
+    <meta name="description" content="">
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        body {
+            font-size: 14px;
+        }
+        
+        @font-face {
+            font-family: 'iconfont';
+            /* project id 2285629 */
+            src: url('http://at.alicdn.com/t/font_2285629_b7tuks21abl.eot');
+            src: url('http://at.alicdn.com/t/font_2285629_b7tuks21abl.eot?#iefix') format('embedded-opentype'), url('http://at.alicdn.com/t/font_2285629_b7tuks21abl.woff2') format('woff2'), url('http://at.alicdn.com/t/font_2285629_b7tuks21abl.woff') format('woff'), url('http://at.alicdn.com/t/font_2285629_b7tuks21abl.ttf') format('truetype'), url('http://at.alicdn.com/t/font_2285629_b7tuks21abl.svg#iconfont') format('svg');
+        }
+        
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 1em;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        #page,
+        section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            touch-action: none;
+            transform: translate3d(0px, 0px, 0px);
+            transition: all 1s ease 0s;
+        }
+        
+        .dots {
+            width: 24px;
+            position: absolute;
+            right: 2%;
+            bottom: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #ccc;
+            border-radius: 3px;
+            margin: 6px;
+        }
+        
+        .dot.active {
+            height: 12px;
+            background-color: #999;
+        }
+        
+        .dots i.iconfont {
+            margin: 6px;
+            font-size: 12px;
+            color: #ccc;
+        }
+        
+        .dots i.iconfont:hover {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            padding-left: 10%;
+        }
+        
+        .wrap img {
+            height: 84px;
+            margin-bottom: 10px;
+            margin-left: 15px;
+        }
+        
+        .wrap h1 {
+            font-size: 30px;
+            margin-left: 24px;
+        }
+        
+        .wrap p {
+            margin-left: 24px;
+            padding: 10px 0;
+            line-height: 2;
+        }
+        
+        .icon_site {
+            font-size: 20px;
+        }
+        
+        footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        
+        footer a {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            line-height: 2;
+            color: #aaa;
+            font-size: 12px;
+        }
+        
+        .icon-beian {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <div class="container">
+            <section class="wrap">
+                <div>
+                    <a href="/_book">
+                        <img src="assets/image/icon_doc.png" alt="">
+                        <h1>youao's Blog <i class="iconfont">&#xe60d;</i></h1>
+                        <p>Personal development documentation</p>
+                    </a>
+                    <p>
+                        <a href="https://github.com/youao" title="github" target="_blank" class="icon_site">
+                            <i class="iconfont" style="color:#262b31">&#xe602;</i>
+                        </a>
+                        <a href="https://juejin.cn/user/1380642337356648" title="掘金" target="_blank" class="icon_site">
+                            <i class="iconfont" style="color: #006cff">&#xe617;</i>
+                        </a>
+                    </p>
+                </div>
+            </section>
+            <section class="wrap">
+                <div>
+                    <h1>购物省钱三步走</h1>
+                    <p>挑选宝贝 - 跳转领券 - 购买省钱</p>
+                    <p>
+                        <a href="" title="淘宝" target="_blank" class="icon_site">
+                            <i class="iconfont" style="color:#FF6817">&#xe604;</i>
+                        </a>
+                        <a href="" title="天猫" target="_blank" class="icon_site">
+                            <i class="iconfont" style="color:#FF0036">&#xe799;</i>
+                        </a>
+                        <a href="" title="京东" target="_blank" class="icon_site">
+                            <i class="iconfont" style="color:#E1251B">&#xe65e;</i>
+                        </a>
+                        <a href="" title="拼多多" target="_blank" class="icon_site">
+                            <i class="iconfont" style="color:#E3544C">&#xe62b;</i>
+                        </a>
+                        <!-- <a href="" title="唯品会" target="_blank" class="icon_site">
+                            <i class="iconfont" style="color:#F10180">&#xe606;</i>
+                        </a> -->
+                    </p>
+                    <img src="assets/image/mini_so_banner.png" alt="">
+                </div>
+            </section>
+        </div>
+        <div class="dots"></div>
+
+        <footer>
+            <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank">
+                <img class="icon-beian" src="https://img.alicdn.com/tfs/TB1hIher4z1gK0jSZSgXXavwpXa-20-20.png" />
+                <span>浙ICP备2020043762号-1</span>
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        var FullPage = {
+            el: "page",
+            container: document.getElementsByClassName("container")[0],
+            containerH: 0,
+            active: 0,
+            autoplay: false,
+            playTime: 1000,
+            isPlaying: false,
+            interval: 5000,
+            timer: null,
+            init() {
+                var el = document.getElementById(this.el);
+                this.containerH = el.offsetHeight;
+                this.setDots();
+                this.autoplay && this.autoPlayDo();
+            },
+            setDots() {
+                var that = this;
+                var size = document.getElementsByTagName("section").length;
+                if (size == 0) return;
+
+                var dots = document.getElementsByClassName("dots")[0];
+                var dirs = ['&#xe633;', '&#xe603;'];
+
+                var up = document.createElement('i');
+                up.className = "iconfont";
+                up.innerHTML = dirs[0];
+                up.onclick = function() {
+                    that.transLastView();
+                };
+                dots.appendChild(up);
+
+                for (var i = 0; i < size; i++) {
+                    var dot = document.createElement('span');
+                    dot.className = "dot";
+                    if (i == that.active) {
+                        dot.className += " active";
+                    }
+                    dot.dataset.index = i;
+                    dot.onclick = function(e) {
+                        var index = e.currentTarget.dataset.index;
+                        that.transView(index);
+                    };
+                    dots.appendChild(dot);
+                }
+
+                var down = document.createElement('i');
+                down.className = "iconfont";
+                down.innerHTML = dirs[1];
+                down.onclick = function() {
+                    that.transNextView();
+                };
+                dots.appendChild(down);
+            },
+            setDotActive(index) {
+                var dots = document.getElementsByClassName('dot');
+                for (var i = 0, ln = dots.length; i < ln; i++) {
+                    var cls = dots[i].classList;
+                    cls.contains("active") && cls.remove("active");
+                }
+                dots[index].classList.add("active");
+            },
+            transView(index = 0) {
+                if (this.isPlaying || index == this.active) return;
+                clearTimeout(this.timer);
+                this.isPlaying = true;
+                var y = -index * this.containerH;
+                this.container.style.transform = "translate3d(0px, " + y + "px, 0px)";
+                this.setDotActive(index);
+                setTimeout(() => {
+                    this.active = index;
+                    this.autoplay && this.autoPlayDo();
+                    this.isPlaying = false;
+                }, this.playTime)
+            },
+            transNextView() {
+                var size = document.getElementsByTagName("section").length;
+                if (size == 0) return;
+                var i = this.active + 1;
+                if (i >= size) i = 0;
+                this.transView(i);
+            },
+            transLastView() {
+                var size = document.getElementsByTagName("section").length;
+                if (size == 0) return;
+                var i = this.active - 1;
+                if (i < 0) i = size - 1;
+                this.transView(i);
+            },
+            autoPlayDo() {
+                this.timer = setTimeout(() => {
+                    this.transNextView();
+                }, this.interval);
+            }
+        };
+
+        FullPage.init();
+    </script>
+</body>
+
+</html>
