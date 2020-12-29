@@ -1,4 +1,5 @@
 <?php
+header("Content-Type:application/json; charset=utf-8");
 include "assets/hdkSdk/ApiSdk.php";
 
 $c = new HdkRequest;
@@ -6,8 +7,8 @@ $c->method = 'sales_list';
 
 $params = array();
 $params['sale_type'] = 1;
-$params['min_id'] = 1;
-$params['back'] = 10;
+$params['min_id'] = empty($_GET['page']) ? 1 : $_GET['page'];
+$params['back'] = empty($_GET['pageSize']) ? 10 : $_GET['pageSize'];
 
 
 $request = $c->request($params);

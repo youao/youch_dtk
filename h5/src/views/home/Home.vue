@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="is_pc ? 'pc' : ''">
+  <div class="container">
     <section class="fmix-center-v" style="padding-top: 10rem">
       <h1>
         <span>Welcome to YouCH!</span>
@@ -37,19 +37,6 @@
       size="24"
       color="#42b983"
     />
-    <footer>
-      <a
-        class="fmix-justify font-gray"
-        href="//beian.miit.gov.cn/#/Integrated/recordQuery"
-        target="_blank"
-      >
-        <img
-          class="icon-beian"
-          src="//img.alicdn.com/tfs/TB1hIher4z1gK0jSZSgXXavwpXa-20-20.png"
-        />
-        <span>浙ICP备2020043762号-1</span>
-      </a>
-    </footer>
   </div>
 </template>
 
@@ -60,7 +47,7 @@ Vue.use(Loading);
 
 import { getGoodsList } from "@/api/taobao";
 import GoodsWaterFallList from "@/components/GoodsWaterFallList";
-import { isPc, evScrollout } from "@/utils";
+import { evScrollout } from "@/utils";
 
 export default {
   name: "Home",
@@ -69,7 +56,6 @@ export default {
   },
   data() {
     return {
-      is_pc: false,
       navs: [
         {
           img:
@@ -108,10 +94,6 @@ export default {
       finished: false,
     };
   },
-  created: function () {
-    this.is_pc = isPc();
-    this.col = isPc() ? 5 : 2;
-  },
   mounted: function () {
     this.getList();
     evScrollout({
@@ -139,10 +121,6 @@ export default {
 .container {
   height: 100%;
   overflow-y: scroll;
-}
-.pc {
-  width: 1000px;
-  margin: 0 auto;
 }
 h1 {
   font-size: 3rem;
