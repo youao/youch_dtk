@@ -234,10 +234,6 @@ switch ($method) {
          * type
          * 1 => 精选好货
          * 2 => 大额神券
-         * 3 => 9.9元封
-         * 4 => 时尚女装
-         * 5 => 潮流男装
-         * 6 => 精致潮鞋
          * **/
         $params['cat_id'] = empty($_GET['type']) ? 1 : $_GET['type'];
         break;
